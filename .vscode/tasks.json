@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make debug",
+            "type": "process",
+            "command": "make",
+            "args": ["DEBUG=1"],
+            "problemMatcher": []
+        },
+        {
+            "label": "make release",
+            "type": "process",
+            "command": "make",
+            "args": ["DEBUG=0"],
+            "problemMatcher": []
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make clean"
+        },
+        {
+            "label": "gdb-debug",
+            "type": "shell",
+            "isBackground": true,
+            "command": "C:/mGBA/mGBA.exe -g ${workspaceFolder}/basic.gba"
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "isBackground": true,
+            "command": "C:/NO$GBADebugger/NO$GBA.exe  ${workspaceFolder}/basic.elf",
+            "problemMatcher": []
+        }
+    ]
+}
