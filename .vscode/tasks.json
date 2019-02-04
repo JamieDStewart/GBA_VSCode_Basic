@@ -3,6 +3,11 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
+        { 
+            "label": "stop emulation",
+            "type":"shell",
+            "command":"taskkill /im mGBA.exe /F"
+        },
         {
             "label": "make debug",
             "type": "process",
@@ -18,6 +23,7 @@
             "problemMatcher": []
         },
         {
+            "dependsOn":"stop emulation",
             "label": "clean",
             "type": "shell",
             "command": "make clean"
@@ -25,8 +31,16 @@
         {
             "label": "gdb-debug",
             "type": "shell",
-            "isBackground": true,
-            "command": "C:/mGBA/mGBA.exe -g ${workspaceFolder}/basic.gba"
+            "dependsOn": ["stop Emulation", "make debug"],
+            "isBackground": false,
+            "command": "C:/mGBA/mGBA.exe -g ${workspaceFolder}/basic.gba;sleep 5;echo debuggerReady",
+            "problemMatcher": {
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "debuggerReady",
+                    //"endsPattern": "^.*blah.*$"
+                },
+            }
         },
         {
             "label": "run",

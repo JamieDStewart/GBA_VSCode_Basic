@@ -9,6 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "gdb-debug", 
+            "serverLaunchTimeout": "20000",
             "stopAtEntry": true,
             "program": "${workspaceRoot}/basic.elf",
             "MIMode": "gdb",
