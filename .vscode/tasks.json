@@ -23,7 +23,7 @@
             "problemMatcher": []
         },
         {
-            "dependsOn":"stop emulation",
+            //"dependsOn":"stop emulation",
             "label": "clean",
             "type": "shell",
             "command": "make clean"
