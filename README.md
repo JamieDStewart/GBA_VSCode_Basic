@@ -1,7 +1,7 @@
 # GBA_VSCode_Basic
 A 'simple' Game Boy Advance development setup using Visual Studio Code and relying on devkitProto do the heavy lifting.
 
-## Dependancies
+## Dependencies
 
 To get this project to compile there are some dependancies that need to be taken into consideration.
 Obviously you will need a GBA emulator set up on your sytem, I tend to flip flop between using NO$GBA or lately mGBA. At the minute I use mGBA as it hooks up nicely with gdb debugging. Which I've configured this VS Code set up to make use of, so get a copy of [mGBA](https://mgba.io/downloads.html).
