@@ -1,5 +1,6 @@
 # GBA_VSCode_Basic
 A 'simple' Game Boy Advance development setup using Visual Studio Code and relying on devkitProto do the heavy lifting.
+**If You're on OS X there's a bit at the bottom of this you should read**
 
 ## Dependencies
 
@@ -45,3 +46,16 @@ You should then be presented with a debug view, where you can navigate through t
 Click on the video to view a youtube video going through this GitHub repo. 
 
 [![alt text](https://github.com/JamieDStewart/GBA_VSCode_Basic/blob/master/images/running.PNG "Proof it works!")](https://youtu.be/Rj0lf46iljc "Video Guide")
+
+## OS X Users
+While this does 'work' on OS X it's not as perfect as I'd like. To get the gdb debugger to work correctly, make sure to get **mGBA version 0.6.1** as the latest version wasn't connecting properly for me. 
+Make sure to codesign the gdb debugger, to do this you need to follow along with [this guide](https://medium.com/@royalstream/how-to-install-and-codesign-gdb-on-os-x-el-capitan-aab3d1172e95) although I ran into an isue with creating the certificate in the 'system' location and had to create it in 'login' then copy it over to the 'system' location (just drag and drop). Then in the final step of actually codesigning, target the devkitpro arm gdb : "codesign -s gdb-cert /opt/devkitpro/devkitARM/bin/arm-none-eabi-gdb"
+
+Ok and now the bit I'm the least satisfied with, there seems to be an issue with VS Code an running mGBA as a background task, mGBA on OS X refuses to pass control back to the terminal to allow the debugger to launch this is no matter what I set the "isBackground" flag to. But, debugging still works, it's just a three step process now. 
+
+1. Press F5 to launch the process
+2. Once mGBA is up and displaying it's startup screen, stop the debugger in VS code by pressing the stop button on the debug toolbar
+3. Press F5 to relaunch the debugger, this time it will attach itself to the existing instance of mGBA.
+4. Happy debugging.
+
+I will come back to address this issue to attempt to get this working without the need to stop and start again.
