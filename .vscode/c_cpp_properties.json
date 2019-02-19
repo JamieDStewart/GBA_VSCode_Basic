@@ -5,7 +5,9 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
-                "${workspaceFolder}"
+                "${workspaceFolder}",
+                "${workspaceFolder}/include",
+                "$(DEVKITARM)/arm-none-eabi/include"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -13,7 +15,9 @@
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
-                    "${workspaceFolder}"
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/include",
+                    "$(DEVKITARM)/arm-none-eabi/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

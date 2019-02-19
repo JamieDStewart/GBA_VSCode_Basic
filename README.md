@@ -1,7 +1,8 @@
 # GBA_VSCode_Basic
 A 'simple' Game Boy Advance development setup using Visual Studio Code and relying on devkitProto do the heavy lifting.
+**If You're on OS X there's a bit at the bottom of this you should read**
 
-## Dependancies
+## Dependencies
 
 To get this project to compile there are some dependancies that need to be taken into consideration.
 Obviously you will need a GBA emulator set up on your sytem, I tend to flip flop between using NO$GBA or lately mGBA. At the minute I use mGBA as it hooks up nicely with gdb debugging. Which I've configured this VS Code set up to make use of, so get a copy of [mGBA](https://mgba.io/downloads.html).
@@ -42,4 +43,19 @@ Line 35 may need to change, or you can remove the whole **run** label if you cho
 Once all of the above changes have been squared away you should be able to make this project (ctrl+shift+p -> make debug) then press F5 to begin debugging, if all your paths are set up you should be good to go. There was an issue with *"The specified task cannot be tracked"* but pressing the button for "debug anyway" keeps the process going with no ill effects, this issue I've managedd to work around by having the launch task run as non-background and have set a simple sleep value in the shell command as a way to delay the process enough for mGBA to get up and running before attempting to connect with gdb, these didn't seem to be anyother way to do this as mGBA doesn't provide any hooks to inform when it has successfully started and I couldn't find any in the process history.
 You should then be presented with a debug view, where you can navigate through the code line by line and track individual values and memory addresses.
 
-![alt text](https://github.com/JamieDStewart/GBA_VSCode_Basic/blob/master/images/running.PNG "Proof it works!")
+Click on the video to view a youtube video going through this GitHub repo. 
+
+[![alt text](https://github.com/JamieDStewart/GBA_VSCode_Basic/blob/master/images/running.PNG "Proof it works!")](https://youtu.be/Rj0lf46iljc "Video Guide")
+
+## OS X Users
+While this does 'work' on OS X it's not as perfect as I'd like. To get the gdb debugger to work correctly, make sure to get **mGBA version 0.6.1** as the latest version wasn't connecting properly for me. 
+Make sure to codesign the gdb debugger, to do this you need to follow along with [this guide](https://medium.com/@royalstream/how-to-install-and-codesign-gdb-on-os-x-el-capitan-aab3d1172e95) although I ran into an isue with creating the certificate in the 'system' location and had to create it in 'login' then copy it over to the 'system' location (just drag and drop). Then in the final step of actually codesigning, target the devkitpro arm gdb : "codesign -s gdb-cert /opt/devkitpro/devkitARM/bin/arm-none-eabi-gdb"
+
+Ok and now the bit I'm the least satisfied with, there seems to be an issue with VS Code an running mGBA as a background task, mGBA on OS X refuses to pass control back to the terminal to allow the debugger to launch this is no matter what I set the "isBackground" flag to. But, debugging still works, it's just a three step process now. 
+
+1. Press F5 to launch the process
+2. Once mGBA is up and displaying it's startup screen, stop the debugger in VS code by pressing the stop button on the debug toolbar
+3. Press F5 to relaunch the debugger, this time it will attach itself to the existing instance of mGBA.
+4. Happy debugging.
+
+I will come back to address this issue to attempt to get this working without the need to stop and start again.

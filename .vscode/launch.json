@@ -9,7 +9,8 @@
             "type": "cppdbg",
             "request": "launch",
             "preLaunchTask": "gdb-debug", 
-            "serverLaunchTimeout": "20000",
+            "postDebugTask": "stop emulation",
+            "serverLaunchTimeout": 10000,
             "stopAtEntry": true,
             "program": "${workspaceRoot}/basic.elf",
             "MIMode": "gdb",
@@ -17,17 +18,24 @@
             "cwd": "${workspaceRoot}",
             "targetArchitecture": "arm",
             "miDebuggerServerAddress": "localhost:2345",
-            "miDebuggerPath": "C:/devkitPro/devkitARM/bin/arm-none-eabi-gdb.exe",
-            "setupCommands": [
-                {
-                   "description": "Enable pretty-printing for gdb",
-                   "ignoreFailures": true,
-                    "text": "file D:/GitHub/GBA/basic/basic.elf -enable-pretty-printing"
-                }
-            ]
-            
-            
-            
+            "windows": {
+                "miDebuggerPath": "C:/devkitPro/devkitARM/bin/arm-none-eabi-gdb.exe",
+                "setupCommands": [
+                    {
+                    "description": "Enable pretty-printing for gdb",
+                    "ignoreFailures": true,
+                        "text": "file D:/GitHub/GBA/basic/basic.elf -enable-pretty-printing"
+                    }]
+            },
+            "osx":{
+                "miDebuggerPath": "/opt/devkitPro/devkitARM/bin/arm-none-eabi-gdb",
+                "setupCommands": [
+                    {
+                    "description": "Enable pretty-printing for gdb",
+                    "ignoreFailures": true,
+                        "text": "file /Users/jamies/GitHub/GBA/basic/basic.elf -enable-pretty-printing"
+                    }]
+            },
         }
     ]
 }
