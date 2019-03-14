@@ -7,7 +7,8 @@
                 "/usr/local/include",
                 "${workspaceFolder}",
                 "${workspaceFolder}/include",
-                "$(DEVKITARM)/arm-none-eabi/include"
+                "/opt/devkitPro/devkitARM/arm-none-eabi/include",
+                "/opt/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -17,7 +18,8 @@
                     "/usr/local/include",
                     "${workspaceFolder}",
                     "${workspaceFolder}/include",
-                    "$(DEVKITARM)/arm-none-eabi/include"
+                    "/opt/devkitPro/devkitARM/arm-none-eabi/include",
+                    "/opt/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -50,12 +52,9 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}",
-                "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
-                "./include",
-                "$(DEVKITARM)/arm-none-eabi/include;$(VC_IncludePath)"
+                "${workspaceFolder}/include",
+                "E:/devkitPro/devkitARM/arm-none-eabi/include",
+                "E:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -68,10 +67,9 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}",
-                    "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include/*",
-                    "C:/Program Files (x86)/Windows Kits/8.1/Include/um",
-                    "C:/Program Files (x86)/Windows Kits/8.1/Include/shared",
-                    "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt"
+                    "${workspaceFolder}/include",
+                    "E:/devkitPro/devkitARM/arm-none-eabi/include",
+                    "E:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
