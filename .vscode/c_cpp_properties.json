@@ -5,7 +5,14 @@
             "includePath": [
                 "/usr/include",
                 "/usr/local/include",
+<<<<<<< HEAD
                 "${workspaceFolder}/include"
+=======
+                "${workspaceFolder}",
+                "${workspaceFolder}/include",
+                "/opt/devkitPro/devkitARM/arm-none-eabi/include",
+                "/opt/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
+>>>>>>> ad7b0030d4f26e5aef9a9d7febd03cba8b06eaab
             ],
             "defines": [],
             "intelliSenseMode": "clang-x64",
@@ -13,7 +20,14 @@
                 "path": [
                     "/usr/include",
                     "/usr/local/include",
+<<<<<<< HEAD
                     "${workspaceFolder}/include"
+=======
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/include",
+                    "/opt/devkitPro/devkitARM/arm-none-eabi/include",
+                    "/opt/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
+>>>>>>> ad7b0030d4f26e5aef9a9d7febd03cba8b06eaab
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
@@ -45,10 +59,17 @@
         {
             "name": "Win32",
             "includePath": [
+<<<<<<< HEAD
                 "${workspaceFolder}/include",
                 "${workspaceFolder}/resources",
                 "C:/devkitPro/devkitARM/arm-none-eabi/include",
                 "C:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/6.3.0/include"
+=======
+                "${workspaceFolder}",
+                "${workspaceFolder}/include",
+                "E:/devkitPro/devkitARM/arm-none-eabi/include",
+                "E:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
+>>>>>>> ad7b0030d4f26e5aef9a9d7febd03cba8b06eaab
             ],
             "defines": [
                 "_DEBUG",
@@ -60,10 +81,17 @@
             "intelliSenseMode": "msvc-x64",
             "browse": {
                 "path": [
+<<<<<<< HEAD
                     "${workspaceFolder}/include",
                     "${workspaceFolder}/resources",
                     "C:/devkitPro/devkitARM/arm-none-eabi/include",
                     "C:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/6.3.0/include"
+=======
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/include",
+                    "E:/devkitPro/devkitARM/arm-none-eabi/include",
+                    "E:/devkitPro/devkitARM/lib/gcc/arm-none-eabi/8.1.0/include"
+>>>>>>> ad7b0030d4f26e5aef9a9d7febd03cba8b06eaab
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
