@@ -1,25 +1,17 @@
 # GBA_VSCode_Basic
-A 'simple' Game Boy Advance development setup using Visual Studio Code and relying on devkitProto do the heavy lifting.
+A 'simple' Game Boy Advance development setup using Visual Studio Code and relying on devkitPro and devkitARM to do the heavy lifting.
 **If You're on OS X there's a bit at the bottom of this you should read**
 
 ## Dependencies
 
 To get this project to compile there are some dependancies that need to be taken into consideration.
-Obviously you will need a GBA emulator set up on your sytem, I tend to flip flop between using NO$GBA or lately mGBA. At the minute I use mGBA as it hooks up nicely with gdb debugging. Which I've configured this VS Code set up to make use of, so get a copy of [mGBA](https://mgba.io/downloads.html).
+Obviously you will need a GBA emulator set up on your sytem, I tend to flip flop between using NO$GBA or lately mGBA. At the minute I use mGBA as it hooks up nicely with gdb debugging. Which I've configured this VS Code set up to make use of, so get a copy of [mGBA](https://mgba.io/downloads.html) (I'm using Version 0.6.2 as version after this at the time of release weren't working correctly with GDB).
 
 ### devkitPro
 
-You will need to have devkitPro installed, this can easily be carried out by heading over to the [devkitPro Installer page](https://github.com/devkitPro/installer/releases) and getting the most current version for your development platform.
+You will need to have devkitPro with devkitARM installed, this can easily be carried out by heading over to the [devkitPro Installer page](https://github.com/devkitPro/installer/releases) and getting the most current version for your development platform.
 Try to avoid installing devkitPro to a directory or sub directory with long path names. I tend to install devkitPro to the root of my data drive. 
-
-### makefile modifications
-
-The makefile in this project will need some modification in the top two lines 
-```makefile
-export DEVKITPRO = /c/devkitPro
-export DEVKITARM = /c/devkitPro/devkitARM
-```
-These two variables will need to be modified to point to the path that you have installed devkitPro into. From the above you can see that my installation on the machine I uploaded this from was to the root of my C drive. 
+Once devKitPro has done it's thing you can move on to getting VS Code set up.
 
 ### VS Code Extensions
 
@@ -30,7 +22,7 @@ These two variables will need to be modified to point to the path that you have 
   
 ### .vscode file modifications
 
-**c_cpp_properties.json** - line 54 of this file may need to be modified. If your installation of devkitPro did not set the DEVKITARM envirnoment variable. You can modify this line of code to point to the *arm-none-eabi/include folder* within devkitPro/devkitARM/ or you can set an envirionment variable called *DEVKITARM* that points to your devkitPro/devkitARM directory (mine is set as DEVKITARM = c/devkitPro/devkitARM/)
+**c_cpp_properties.json** - line 54 of this file may need to be modified. You can modify this line of code to point to the *arm-none-eabi/include folder* within devkitPro/devkitARM/
 
 **launch.json** - There are a few modifications to be made here, again surrounding where you have installed devkitPro to on your machine. 
   - Line 19 the location that *miDebuggerPath* points to will need to change to reflect your devkitPro installation folder path.
