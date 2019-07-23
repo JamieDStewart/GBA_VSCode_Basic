@@ -26,7 +26,6 @@ Once devKitPro has done it's thing you can move on to getting VS Code set up.
 
 **launch.json** - There are a few modifications to be made here, again surrounding where you have installed devkitPro to on your machine. 
   - Line 19 the location that *miDebuggerPath* points to will need to change to reflect your devkitPro installation folder path.
-  - Line 24 will need to change to point the debugger to the folder that the basic.elf is built into, so wherever you have cloned this repo to.
   
 **tasks.json** - line 29 will need to change to reflect where you have installed mGBA. Only the first part of this line needs to change up to the call to the exe. The latter half of the line need not change. 
 Line 35 may need to change, or you can remove the whole **run** label if you choose to. I sometimes use No$GBA as the source debugger is pretty great.

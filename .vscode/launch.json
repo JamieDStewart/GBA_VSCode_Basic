@@ -12,10 +12,10 @@
             "postDebugTask": "stop emulation",
             "serverLaunchTimeout": 10000,
             "stopAtEntry": true,
-            "program": "${workspaceRoot}/basic.elf",
+            "program": "${workspaceFolder}/${workspaceFolderBasename}.elf",
             "MIMode": "gdb",
             "externalConsole": true,
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceFolder}",
             "targetArchitecture": "arm",
             "miDebuggerServerAddress": "localhost:2345",
             "windows": {
@@ -24,7 +24,7 @@
                     {
                     "description": "Enable pretty-printing for gdb",
                     "ignoreFailures": true,
-                        "text": "file D:/GitHub/GBA/basic/basic.elf -enable-pretty-printing"
+                        "text": "file ${workspaceFolder}/${workspaceFolderBasename}.elf -enable-pretty-printing"
                     }]
             },
             "osx":{
@@ -33,7 +33,7 @@
                     {
                     "description": "Enable pretty-printing for gdb",
                     "ignoreFailures": true,
-                        "text": "file /Users/jamies/GitHub/GBA/basic/basic.elf -enable-pretty-printing"
+                        "text": "file ${workspaceFolder}/${workspaceFolderBasename}.elf -enable-pretty-printing"
                     }]
             },
         }
